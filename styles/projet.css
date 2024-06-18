@@ -1,0 +1,33 @@
+:root{
+    --light-grey-color: #f7f7f7;
+    --white-color: #fff;
+    --yellow-color: #ffeb3b;
+    --orange-color: #ff9800;
+    --red-color: #f44336;
+    --dark-red-color: #db271a;
+    --medium-blue-color: #03a9f4;
+    --dark-blue-color: #0288d1;
+    --green-color: #4caf50;
+    --black-color: #333;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--light-grey-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+.deployment-message {
+    text-align: center;
+}
+
+.deployment-message h1 {
+    font-size: 2rem;
+    color: var(--dark-blue-color);
+}
