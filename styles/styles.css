@@ -1,5 +1,4 @@
-/*Reset and global start*/
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -10,11 +9,11 @@
     outline: none;
 }
 
-img{
+img {
     width: 100%;
 }
 
-:root{
+:root {
     --light-grey-color: #f7f7f7;
     --white-color: #fff;
     --yellow-color: #ffeb3b;
@@ -29,7 +28,7 @@ img{
 /*Reset and global end*/
 
 /*Header part start*/
-.header{
+.header {
     position: fixed;
     padding: 0 2%;
     top: 0;
@@ -43,40 +42,39 @@ img{
     box-shadow: 0 0 20px rgb(0 0 0 /10%);
 }
 
-.header .logo h1{
+.header .logo h1 {
     color: var(--black-color);
     font-size: 1.5rem;
     font-weight: 590;
     padding-top: 8px;
 }
 
-.header .logo  h1 span{
+.header .logo h1 span {
     color: var(--red-color);
 }
 
-.header .menu{
+.header .menu {
     display: flex;
     gap: 20px;
 }
 
-.header .menu li a{
+.header .menu li a {
     color: var(--black-color);
     font-size: 1rem;
     font-weight: 500;
 }
 
-.header .menu li a:hover{
+.header .menu li a:hover {
     color: var(--dark-red-color);
     transition: all .4s ease;
 }
 
-.header .btn-menu{
+.header .btn-menu {
     color: var(--red-color);
     font-size: 1.5rem;
     display: none;
 }
 /*Header part end*/
-
 
 /*Section hero start*/
 .hero {
@@ -101,6 +99,15 @@ img{
     max-width: 1200px;
     gap: 20px;
 }
+
+/*.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 2%;
+}*/
+
+
 
 .hero-social-media {
     display: flex;
@@ -199,6 +206,7 @@ img{
         transform: translateY(0);
     }
 }
+
 .whatsapp-icon {
     position: fixed;
     bottom: 20px;
@@ -235,44 +243,45 @@ img{
     background-color: var(--green-color);
     color: var(--white-color);
     padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.whatsapp-dialog .dialog-header h2 {
     font-size: 1.2rem;
-    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .whatsapp-dialog .dialog-header .close-btn {
-    font-size: 1.5rem;
     cursor: pointer;
 }
 
-.whatsapp-dialog .dialog-body {
+.whatsapp-dialog .dialog-content {
     padding: 10px;
-    text-align: center;
 }
 
-.whatsapp-dialog .dialog-body img {
-    width: 100%;
-    height: auto;
+.whatsapp-dialog .dialog-content p {
     margin-bottom: 10px;
 }
 
-.whatsapp-dialog .dialog-body a {
-    display: inline-block;
+.whatsapp-dialog .dialog-content input,
+.whatsapp-dialog .dialog-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.whatsapp-dialog .dialog-content button {
     background-color: var(--green-color);
     color: var(--white-color);
     padding: 10px 20px;
+    border: none;
     border-radius: 5px;
-    text-decoration: none;
+    cursor: pointer;
     transition: background 0.3s;
 }
 
-.whatsapp-dialog .dialog-body a:hover {
-    background-color: var(--dark-blue-color);
+.whatsapp-dialog .dialog-content button:hover {
+    background-color: darken(var(--green-color), 10%);
 }
 
 /*Section hero end*/
@@ -738,7 +747,7 @@ img{
 
 
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
     .header {
         padding: 10px 20px;
     }
@@ -775,7 +784,50 @@ img{
     }
 
     
+}*/
+
+@media screen and (max-width: 768px) {
+    .hero-content {
+        padding: 40px 2%;
+    }
+
+    .hero-social-media a {
+        margin: 10px;
+    }
+
+    .hero-img img {
+        margin-top: 10px;
+        width: 80%;
+    }
+
+    .about-img img {
+        width: 100px;
+        border-radius: 20px;
+    }
+
+    .services-list,
+    .projects-list,
+    .contact-info {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .service-item,
+    .project-item {
+        width: 100%;
+    }
+
+    .contact-details,
+    .contact-form {
+        flex: 100%;
+        margin-right: 0;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
 }
+
 
 @media screen and (max-width: 1024px) {
     .service-item {
@@ -867,184 +919,77 @@ img{
     transform: translateY(-10px);
 }
 
+@media screen and (max-width: 1200px) {
+    .header {
+        padding: 10px 20px;
+    }
+    .header .btn-menu {
+        display: flex;
+    }
+    .header .menu {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        height: 100vh;
+        width: 100%;
+        max-width: 300px;
+        background: var(--white-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        z-index: 1000;
+    }
+    .header .menu li {
+        margin-bottom: 20px;
+    }
+    .header .btn-menu i {
+        cursor: pointer;
+    }
+    .header .menu.show {
+        left: 0;
+    }
+}
+
 @media screen and (max-width: 1024px) {
+    .service-item,
     .project-item {
         width: calc(50% - 20px);
     }
 }
 
 @media screen and (max-width: 768px) {
-    .project-item {
+    .header .btn-menu {
+        display: flex;
+    }
+
+    .header .menu {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        height: 100vh;
         width: 100%;
-    }
-}
-
-/* Styles pour la section Contact */
-
-.contact {
-    background: var(--light-grey-color);
-    padding: 60px 0;
-    text-align: center;
-}
-
-.contact-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 5%;
-}
-
-.contact .section-title-01 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: var(--dark-blue-color);
-    position: relative;
-    z-index: 1;
-}
-
-.contact-info {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 60px;
-}
-
-/* Styles pour la section Contact (suite) */
-
-.contact-details {
-    flex: 1;
-    text-align: left;
-}
-
-.contact-details div {
-    margin-bottom: 20px;
-}
-
-.contact-details i {
-    font-size: 2rem;
-    margin-right: 10px;
-    vertical-align: middle;
-    color: var(--red-color);
-}
-
-.contact-form {
-    flex: 1;
-    background: var(--white-color);
-    padding: 40px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    text-align: left;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 500;
-    color: var(--black-color);
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    color: var(--black-color);
-}
-
-.contact-btn {
-    background: var(--red-color);
-    color: var(--white-color);
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-.contact-btn i {
-    margin-left: 5px;
-}
-
-.contact-btn:hover {
-    background: var(--dark-red-color);
-}
-
-@media screen and (max-width: 768px) {
-    .contact-info {
+        max-width: 300px;
+        background: var(--white-color);
         flex-direction: column;
-        gap: 40px;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        z-index: 1000;
     }
-}
 
-/* Styles pour la section Footer */
-
-.footer {
-    background: var(--black-color);
-    color: var(--white-color);
-    padding: 20px 0;
-    text-align: center;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 5%;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.footer-links a {
-    color: var(--white-color);
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-.footer-social-media {
-    margin-bottom: 15px;
-}
-
-.footer-social-media a {
-    color: var(--white-color);
-    font-size: 1.5rem;
-    margin: 0 10px;
-    text-decoration: none;
-}
-
-.footer-social-media a:hover {
-    color: var(--red-color);
-}
-
-.footer-info p {
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-/* Media queries généraux */
-
-@media screen and (max-width: 1024px) {
-    .hero-content {
-        padding: 60px 3%;
+    .header .menu li {
+        margin-bottom: 20px;
     }
-}
 
-@media screen and (max-width: 768px) {
+    .header .btn-menu i {
+        cursor: pointer;
+    }
+
+    .header .menu.show {
+        left: 0;
+    }
+
     .hero-content {
         padding: 60px 2%;
     }
